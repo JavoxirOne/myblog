@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+GeekLoop | {{ category.title }}
+{% endblock %}
+
+{% block header_subtitle %}
+<div>
+    <a href="{{ category.get_absolute_url }}" class="secondary-badge">{{ category.title }}</a>
+</div>
+{% endblock %}
+
+{% block main %}
+<section class="news">
+    <div class="container">
+        <h3 class="news__title">
+            {{ category.title }}
+        </h3>
+        {% for article in articles %}
+        {% include 'main/components/_card.html' %}
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

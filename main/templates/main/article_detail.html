@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+GeekLoop | {{ article.title }}
+{% endblock %}
+
+{% block header_subtitle %}
+<div class="article__detail-title">
+    <a href="" class="secondary-badge">{{ article.category.title }}</a>
+    <div class="article__date">{{ article.created_at|date }}</div>
+</div>
+{% endblock %}
+
+{% block header_title %}
+{{ article.title }}
+{% endblock %}
+
+{% block main %}
+<div class="article__img">
+    <div class="title__image" style="background-image: url('{{ article.image.url }}')"></div>
+</div>
+<section class="article">
+    <div class="container">
+        <div class="article__content">
+            {{ article.description|safe }}
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="rec-line"></div>
+</div>
+<section class="rec">
+    <div class="container">
+        <h3 class="news__title">
+            Other interesting posts
+        </h3>
+        <div class="rec__content">
+            {% for article in articles %}
+            {% include 'main/components/_card.html' %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

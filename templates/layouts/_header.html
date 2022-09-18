@@ -1,0 +1,22 @@
+{% load main_tags %}
+{% get_categories as categories %}
+
+
+        <nav class="navbar">
+            <div class="container-lg">
+                <div class="navbar-content">
+                    <div><a href="{% url 'home' %}" class="header__logo">GEEKLOOP</a></div>
+                    <ul class="header__navigation">
+                        {% for category in categories %}
+                        <li class="list__item"><a href="{{ category.get_absolute_url }}" class="item__link">{{ category.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    <div>
+                        <a href="" class="main-btn">
+                            Subscribe
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>

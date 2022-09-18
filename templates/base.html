@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link href="http://fonts.cdnfonts.com/css/graphik" rel="stylesheet">
+</head>
+<body>
+
+<!--HEADER START-->
+<header class="header">
+    <div class="header__content">
+
+
+        {% include 'layouts/_header.html' %}
+        <section class="home">
+            <div class="container">
+                <div class="home__content">
+                    {% block header_subtitle %}
+                    <small class="home__subtitle">👋 HELLO</small>
+                    {% endblock %}
+                    <h1 class="home__title">
+                        {% block header_title %}
+                        Insights about my personal and work life, and the in-betweens
+                        {% endblock %}</h1>
+                </div>
+            </div>
+        </section>
+    </div>
+</header>
+
+<!--HEADER END-->
+
+<!--MAIN START-->
+<main class="main">
+    {% block main %}
+    {% endblock %}
+</main>
+<!--MAIN END-->
+
+<!--FOOTER START-->
+{% include 'layouts/_footer.html' %}
+<!--FOOTER END-->
+</body>
+</html>
