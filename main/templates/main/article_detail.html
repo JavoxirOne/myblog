@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load social_share %}
 {% block title %}
 GeekLoop | {{ article.title }}
 {% endblock %}
@@ -8,6 +8,9 @@ GeekLoop | {{ article.title }}
 <div class="article__detail-title">
     <a href="" class="secondary-badge">{{ article.category.title }}</a>
     <div class="article__date">{{ article.created_at|date }}</div>
+    <div class="card__views">
+        <i class="fa-solid fa-eye"></i> {{ article.views }}
+    </div>
 </div>
 {% endblock %}
 
@@ -24,9 +27,22 @@ GeekLoop | {{ article.title }}
         <div class="article__content">
             {{ article.description|safe }}
         </div>
+
+
     </div>
 </section>
 <div class="container">
+    <div class="article__share">
+        <strong>Share:</strong>
+        <a href="https://t.me/share/url?text=&url={% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{{ request.path }}"
+           class="main-btn" target="_blank" style="background-color: #39a5ff;">
+            Telegram
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{{ request.path }}"
+           class="main-btn" target="_blank" style="background-color: #2d54e2;">
+            Facebook
+        </a>
+    </div>
     <div class="rec-line"></div>
 </div>
 <section class="rec">

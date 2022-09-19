@@ -8,6 +8,9 @@
                         <div class="card__date">
                             {{ article.created_at|date }}
                         </div>
+                        <div class="card__views">
+                            <i class="fa-solid fa-eye"></i> {{ article.views }}
+                        </div>
                     </div>
                     <div class="card__body">
                         <h3 class="card__title">
