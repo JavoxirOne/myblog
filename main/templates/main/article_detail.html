@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% load social_share %}
+
+{% block description %}
+{{ article.description_lite }}
+{% endblock %}
+
 {% block title %}
-GeekLoop | {{ article.title }}
+{{ article.title }}
 {% endblock %}
 
 {% block header_subtitle %}

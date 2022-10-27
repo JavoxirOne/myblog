@@ -4,9 +4,10 @@ from .models import *
 
 # Create your views here.
 def home_view(request):
-    context = {}
-    context['articles'] = Article.objects.order_by('-created_at')[:3]
-    context['categories'] = Category.objects.all()
+    context = {
+        "articles": Article.objects.order_by('-created_at')[:3],
+        "categories": Category.objects.all()
+    }
     return render(request, 'main/home.html', context)
 
 

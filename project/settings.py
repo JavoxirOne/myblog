@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-f2rle-9%!0ro7!=sv&bsm9&k@i8yh=^jmgqa^#nv1fa(lbv3x&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['vm3854349.25ssd.had.wf', '127.0.0.1']
+ALLOWED_HOSTS = ['vm3854349.25ssd.had.wf', '127.0.0.1', 'nurmatjonov.uz', 'javoxirone.pythonanywhere.com']
 
 # Application definition
 
@@ -117,7 +117,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_HOST = "http://geekloop.azurewebsites.net/" if not DEBUG else ""
+STATIC_HOST = "http://javoxirone.pythonanywhere.com/" if not DEBUG else ""
 
 STATIC_ROOT = BASE_DIR / 'static'
 
@@ -130,7 +130,7 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 MEDIAFILES_STORAGE = "whitenoise.storage.CompressedManifestMediaFilesStorage"
 
-MEDIA_HOST = "http://geekloop.azurewebsites.net/" if not DEBUG else ""
+MEDIA_HOST = "http://javoxirone.pythonanywhere.com/" if not DEBUG else ""
 
 MEDIA_ROOT = BASE_DIR / 'media'
 
@@ -140,3 +140,4 @@ MEDIA_URL = MEDIA_HOST + '/media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CSRF_TRUSTED_ORIGINS = ['http://javoxirone.pythonanywhere.com']
